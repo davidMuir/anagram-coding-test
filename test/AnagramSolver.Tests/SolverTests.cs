@@ -12,13 +12,10 @@ namespace AnagramSolver.Tests
         [InlineData("Fish", "Bird", false)]
         [InlineData("I am an anagram", "I am not an anagram", false)]
         [InlineData("Little", "Lottle", false)]
-        [InlineData("aaab", "aabb", false)]
-        [InlineData("aabb", "aaab", false)]
+        [InlineData("google", "goggle", false)]
         public void ChecksAnagramCorrectly(string phrase1, string phrase2, bool expected)
         {
-            var solver = new Solver();
-
-            var actual = solver.IsAnagram(phrase1, phrase2);
+            var actual = Solver.IsAnagram(phrase1, phrase2);
 
             Assert.Equal(expected, actual);
         }
